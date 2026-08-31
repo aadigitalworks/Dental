@@ -112,10 +112,11 @@
       background: #ffffff;
       border: 1px solid #f1f5f9;
       transition: all 0.25s ease;
+      cursor: pointer;
     }
     .doctor-card:hover {
-      border-color: #e2e8f0;
-      box-shadow: 0 12px 28px -12px rgba(15, 23, 42, 0.04);
+      border-color: #1e3a8a;
+      box-shadow: 0 12px 28px -12px rgba(30, 58, 138, 0.08);
     }
 
     .input-field {
@@ -138,9 +139,52 @@
       .hero-headline { font-size: 2.25rem; line-height: 1.2; }
     }
 
-    /* generous spacing and clean typography */
-    section { padding: 5rem 0; }
-    @media (min-width: 768px) { section { padding: 6rem 0; } }
+    /* modal overlay */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-content {
+      background: #ffffff;
+      max-width: 540px;
+      width: 90%;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      transform: scale(0.95);
+      transition: all 0.3s ease;
+      box-shadow: 0 30px 60px -20px rgba(0,0,0,0.2);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal-overlay.active .modal-content {
+      transform: scale(1);
+    }
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.25rem;
+      background: #f1f5f9;
+      border-radius: 9999px;
+      padding: 0.4rem;
+      transition: background 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .modal-close:hover { background: #e2e8f0; }
+    .modal-content { position: relative; }
   </style>
 </head>
 <body>
@@ -188,9 +232,10 @@
 
   <main class="pt-16 md:pt-20">
 
-    <!-- HERO: spacious, minimal -->
-    <section id="home" class="bg-[#f8fafc] border-b border-slate-100/60">
-      <div class="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-24 lg:py-32">
+    <!-- HERO: spacious, minimal with high-res background -->
+    <section id="home" class="relative bg-[#f8fafc] border-b border-slate-100/60 overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.04] bg-[url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1600&q=80')] bg-cover bg-center"></div>
+      <div class="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-24 lg:py-32 relative">
         <div class="grid md:grid-cols-12 gap-12 items-center">
           <div class="md:col-span-7 space-y-6">
             <div class="inline-block bg-[#1e3a8a]/5 text-[#1e3a8a] text-sm font-medium px-4 py-1.5 rounded-full tracking-wide border border-[#1e3a8a]/10">
@@ -215,9 +260,10 @@
             </div>
           </div>
           <div class="md:col-span-5 flex justify-center">
-            <div class="relative w-full max-w-sm aspect-square rounded-2xl bg-gradient-to-br from-[#1e3a8a]/[0.03] to-[#1e3a8a]/[0.02] border border-slate-200/60 shadow-sm flex items-center justify-center p-6">
-              <div class="text-center">
-                <span class="text-7xl block mb-2">🦷</span>
+            <div class="relative w-full max-w-sm aspect-square rounded-2xl bg-gradient-to-br from-[#1e3a8a]/[0.03] to-[#1e3a8a]/[0.02] border border-slate-200/60 shadow-sm flex items-center justify-center p-6 overflow-hidden">
+              <div class="absolute inset-0 opacity-[0.06] bg-[url('https://images.unsplash.com/photo-1606811971616-64f8378cc29a?w=600&q=80')] bg-cover bg-center"></div>
+              <div class="text-center relative z-10">
+                <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                 <p class="text-xs font-medium text-slate-400 tracking-widest uppercase">Est. 2014</p>
                 <h3 class="text-2xl font-bold text-[#0f172a]">Court Street</h3>
                 <p class="text-sm text-slate-500">Beni Suef · Egypt</p>
@@ -228,7 +274,7 @@
       </div>
     </section>
 
-    <!-- ABOUT: clean 2-column -->
+    <!-- ABOUT: clean 2-column with medical background -->
     <section id="about" class="bg-white">
       <div class="max-w-7xl mx-auto px-6 md:px-8">
         <div class="grid md:grid-cols-2 gap-16 items-center">
@@ -260,11 +306,9 @@
               </div>
             </div>
           </div>
-          <div class="bg-[#f1f5f9] rounded-2xl border border-slate-200/60 shadow-sm p-12 flex items-center justify-center">
-            <div class="text-center">
-              <span class="text-7xl block mb-4">🏥</span>
-              <p class="text-slate-500 text-sm">Modern clinic · Beni Suef</p>
-            </div>
+          <div class="relative rounded-2xl overflow-hidden shadow-sm border border-slate-200/60 aspect-[4/3] bg-[#f1f5f9]">
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80" alt="Court Street Dental modern clinic interior" class="w-full h-full object-cover" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/20 to-transparent"></div>
           </div>
         </div>
       </div>
@@ -280,32 +324,32 @@
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           <article class="service-card p-8 rounded-xl">
-            <span class="text-3xl block mb-4">✨</span>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mb-4"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             <h3 class="text-xl font-bold text-[#0f172a]">Cosmetic Dentistry</h3>
             <p class="text-slate-500 text-sm mt-1 leading-relaxed">Smile design, veneers, bonding &amp; aesthetic contouring.</p>
           </article>
           <article class="service-card p-8 rounded-xl">
-            <span class="text-3xl block mb-4">🦷</span>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mb-4"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             <h3 class="text-xl font-bold text-[#0f172a]">Dental Implants</h3>
             <p class="text-slate-500 text-sm mt-1 leading-relaxed">Premium implant solutions for permanent tooth replacement.</p>
           </article>
           <article class="service-card p-8 rounded-xl">
-            <span class="text-3xl block mb-4">📐</span>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mb-4"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             <h3 class="text-xl font-bold text-[#0f172a]">Orthodontics</h3>
             <p class="text-slate-500 text-sm mt-1 leading-relaxed">Invisalign, fixed braces, and retainers for aligned smiles.</p>
           </article>
           <article class="service-card p-8 rounded-xl">
-            <span class="text-3xl block mb-4">🔬</span>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mb-4"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             <h3 class="text-xl font-bold text-[#0f172a]">Endodontics</h3>
             <p class="text-slate-500 text-sm mt-1 leading-relaxed">Pain-free root canal therapy with micro-surgical precision.</p>
           </article>
           <article class="service-card p-8 rounded-xl">
-            <span class="text-3xl block mb-4">👶</span>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mb-4"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             <h3 class="text-xl font-bold text-[#0f172a]">Pediatric Dentistry</h3>
             <p class="text-slate-500 text-sm mt-1 leading-relaxed">Gentle, child-friendly care for healthy growing smiles.</p>
           </article>
           <article class="service-card p-8 rounded-xl">
-            <span class="text-3xl block mb-4">⚕️</span>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mb-4"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             <h3 class="text-xl font-bold text-[#0f172a]">Oral Surgery</h3>
             <p class="text-slate-500 text-sm mt-1 leading-relaxed">Wisdom tooth extraction, biopsies, and surgical procedures.</p>
           </article>
@@ -313,16 +357,17 @@
       </div>
     </section>
 
-    <!-- TEAM: 3 clean profile cards -->
+    <!-- TEAM: interactive doctor cards with modal -->
     <section id="team" class="bg-white">
       <div class="max-w-7xl mx-auto px-6 md:px-8">
         <div class="text-center max-w-2xl mx-auto">
           <span class="text-[#1e3a8a] font-medium tracking-widest text-sm uppercase border-b-2 border-[#1e3a8a]/20 pb-1">Team</span>
           <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mt-4">Specialists in advanced dentistry</h2>
-          <p class="text-slate-500 mt-3">Each clinician brings years of specialised experience.</p>
+          <p class="text-slate-500 mt-3">Each clinician brings years of specialised experience. Click a profile for more details.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          <article class="doctor-card rounded-2xl p-8 text-center">
+          <!-- Doctor 1 -->
+          <div class="doctor-card rounded-2xl p-8 text-center" data-doctor="0">
             <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face" alt="Dr. Ahmed El-Masry" class="w-28 h-28 rounded-full object-cover border-2 border-[#1e3a8a]/10 mx-auto mb-4" loading="lazy" />
             <h3 class="text-xl font-bold text-[#0f172a]">Dr. Ahmed El-Masry</h3>
             <p class="text-sm text-[#1e3a8a] font-medium">BDS, MSc (Restorative)</p>
@@ -331,8 +376,9 @@
               <span class="bg-slate-100 px-3 py-1 rounded-full">Surgical Implantology</span>
               <span class="bg-slate-100 px-3 py-1 rounded-full">Smile Design</span>
             </div>
-          </article>
-          <article class="doctor-card rounded-2xl p-8 text-center">
+          </div>
+          <!-- Doctor 2 -->
+          <div class="doctor-card rounded-2xl p-8 text-center" data-doctor="1">
             <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop&crop=face" alt="Dr. Nour Khaled" class="w-28 h-28 rounded-full object-cover border-2 border-[#1e3a8a]/10 mx-auto mb-4" loading="lazy" />
             <h3 class="text-xl font-bold text-[#0f172a]">Dr. Nour Khaled</h3>
             <p class="text-sm text-[#1e3a8a] font-medium">BDS, MSc (Ortho)</p>
@@ -341,8 +387,9 @@
               <span class="bg-slate-100 px-3 py-1 rounded-full">Invisalign</span>
               <span class="bg-slate-100 px-3 py-1 rounded-full">Growth Guidance</span>
             </div>
-          </article>
-          <article class="doctor-card rounded-2xl p-8 text-center">
+          </div>
+          <!-- Doctor 3 -->
+          <div class="doctor-card rounded-2xl p-8 text-center" data-doctor="2">
             <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop&crop=face" alt="Dr. Karim Hassan" class="w-28 h-28 rounded-full object-cover border-2 border-[#1e3a8a]/10 mx-auto mb-4" loading="lazy" />
             <h3 class="text-xl font-bold text-[#0f172a]">Dr. Karim Hassan</h3>
             <p class="text-sm text-[#1e3a8a] font-medium">BDS, PhD (Endo)</p>
@@ -351,7 +398,7 @@
               <span class="bg-slate-100 px-3 py-1 rounded-full">Micro-Endodontics</span>
               <span class="bg-slate-100 px-3 py-1 rounded-full">Re-treatment</span>
             </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
@@ -399,6 +446,18 @@
     </section>
   </main>
 
+  <!-- DOCTOR MODAL -->
+  <div id="doctor-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div id="modal-body" class="space-y-4">
+        <!-- dynamic content injected via JS -->
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER: subtle dark slate -->
   <footer class="bg-[#0f172a] text-slate-300 py-10">
     <div class="max-w-7xl mx-auto px-6 md:px-8">
@@ -414,7 +473,10 @@
           <a href="#team" class="footer-link">Team</a>
           <a href="#contact" class="footer-link">Contact</a>
         </div>
-        <div class="text-sm text-slate-400">📞 +20 123 456 7890</div>
+        <div class="text-sm text-slate-400">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +20 123 456 7890
+        </div>
       </div>
       <div class="border-t border-slate-700/50 mt-8 pt-6 text-center text-xs text-slate-500">
         &copy; 2026 Court Street Dental · All rights reserved.
@@ -424,6 +486,7 @@
 
   <script>
     (function() {
+      // Mobile menu toggle
       const toggle = document.getElementById('menu-toggle');
       const menu = document.getElementById('mobile-menu');
       
@@ -441,6 +504,7 @@
         });
       });
 
+      // Smooth scroll for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           const targetId = this.getAttribute('href');
@@ -453,6 +517,88 @@
             window.scrollTo({ top: pos, behavior: 'smooth' });
           }
         });
+      });
+
+      // Doctor data for modal
+      const doctors = [
+        {
+          name: "Dr. Ahmed El-Masry",
+          title: "BDS, MSc (Restorative)",
+          specialty: "Cosmetic & Implant Dentistry",
+          bio: "Dr. El-Masry brings over 12 years of experience in restorative and aesthetic dentistry. He is a leading implantologist in the region, known for his meticulous approach and natural-looking results.",
+          subSpecialties: ["Surgical Implantology", "Smile Design", "Full Mouth Rehabilitation"],
+          image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face"
+        },
+        {
+          name: "Dr. Nour Khaled",
+          title: "BDS, MSc (Ortho)",
+          specialty: "Orthodontics & Pediatric Care",
+          bio: "Dr. Khaled is passionate about creating confident smiles through orthodontics. She is a certified Invisalign provider and specialises in growth guidance for children and adolescents.",
+          subSpecialties: ["Invisalign", "Growth Guidance", "Interceptive Orthodontics"],
+          image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop&crop=face"
+        },
+        {
+          name: "Dr. Karim Hassan",
+          title: "BDS, PhD (Endo)",
+          specialty: "Endodontics & Microsurgery",
+          bio: "Dr. Hassan is a renowned endodontist with 15+ years of experience. He performs pain-free root canal treatments using state-of-the-art microscopy and is frequently consulted for complex re-treatment cases.",
+          subSpecialties: ["Micro-Endodontics", "Re-treatment", "Surgical Endodontics"],
+          image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop&crop=face"
+        }
+      ];
+
+      // Modal elements
+      const modal = document.getElementById('doctor-modal');
+      const modalBody = document.getElementById('modal-body');
+      const closeBtn = document.getElementById('modal-close');
+
+      // Open modal with doctor data
+      function openModal(index) {
+        const doc = doctors[index];
+        if (!doc) return;
+        
+        modalBody.innerHTML = `
+          <div class="flex flex-col items-center text-center">
+            <img src="${doc.image}" alt="${doc.name}" class="w-24 h-24 rounded-full object-cover border-2 border-[#1e3a8a]/20 mb-4" loading="lazy" />
+            <h3 class="text-2xl font-bold text-[#0f172a]">${doc.name}</h3>
+            <p class="text-sm text-[#1e3a8a] font-medium">${doc.title}</p>
+            <p class="text-sm text-slate-500 mt-1">${doc.specialty}</p>
+            <p class="text-slate-600 mt-4 leading-relaxed text-sm">${doc.bio}</p>
+            <div class="mt-4 w-full">
+              <h4 class="text-sm font-semibold text-[#0f172a] text-left">Areas of focus</h4>
+              <div class="flex flex-wrap gap-1.5 mt-2">
+                ${doc.subSpecialties.map(s => `<span class="bg-slate-100 px-3 py-1 rounded-full text-xs text-slate-700">${s}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      // Close modal
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // Event listeners for doctor cards
+      document.querySelectorAll('.doctor-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+          const index = this.dataset.doctor;
+          if (index !== undefined) openModal(parseInt(index));
+        });
+      });
+
+      // Close on overlay click or close button
+      modal.addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+      });
+      closeBtn.addEventListener('click', closeModal);
+
+      // Close with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
       });
     })();
   </script>
