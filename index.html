@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-  <title>Court Street Dental · Beni Suef | Precision Dentistry</title>
-  <meta name="description" content="Court Street Dental in Beni Suef, Egypt — premium dental care with a European standard. Cosmetic, implants, orthodontics &amp; family dentistry." />
-  <meta name="keywords" content="dental clinic Beni Suef, cosmetic dentistry Egypt, dental implants, orthodontics, Court Street Dental" />
+  <title>Court Street Dental · Wexford | Precision Dentistry</title>
+  <meta name="description" content="Court Street Dental in Wexford &amp; Enniscorthy, Ireland — premium dental care with a European standard. Cosmetic, implants, orthodontics &amp; family dentistry." />
+  <meta name="keywords" content="dental clinic Wexford, cosmetic dentistry Enniscorthy, dental implants, orthodontics, Court Street Dental" />
   
   <!-- Open Graph -->
-  <meta property="og:title" content="Court Street Dental · Beni Suef" />
-  <meta property="og:description" content="Precision dentistry in the heart of Beni Suef. Advanced technology, patient-centric care." />
+  <meta property="og:title" content="Court Street Dental · Wexford &amp; Enniscorthy" />
+  <meta property="og:description" content="Precision dentistry in Wexford and Enniscorthy. Advanced technology, patient-centric care." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://courtstreetdental.example.com" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1200&h=630&fit=crop" />
+  <meta property="og:url" content="https://courtstreetdental.ie" />
 
   <!-- Schema.org MedicalBusiness JSON-LD -->
   <script type="application/ld+json">
@@ -20,18 +19,17 @@
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "name": "Court Street Dental",
-    "description": "Premium dental clinic in Beni Suef, Egypt. Specialists in cosmetic dentistry, implants, orthodontics and endodontics.",
+    "description": "Premium dental clinic in Wexford and Enniscorthy, Ireland. Specialists in cosmetic dentistry, implants, orthodontics and endodontics.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Court Street",
-      "addressLocality": "Beni Suef",
-      "addressCountry": "EG"
+      "addressLocality": "Wexford",
+      "addressCountry": "IE"
     },
-    "telephone": "+201234567890",
-    "email": "info@courtstreetdental.com",
-    "openingHours": "Sat-Thu 09:00-21:00",
-    "priceRange": "$$",
-    "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop"
+    "telephone": "+353539123456",
+    "email": "info@courtstreetdental.ie",
+    "openingHours": "Mon-Fri 08:00-20:00, Sat 09:00-17:00",
+    "priceRange": "$$"
   }
   </script>
 
@@ -45,9 +43,8 @@
     * { font-family: 'Inter', system-ui, -apple-system, sans-serif; scroll-behavior: smooth; }
     body { background: #fafcff; }
     
-    /* glassmorphic header */
     .glass-header {
-      background: rgba(255, 255, 255, 0.80);
+      background: rgba(255, 255, 255, 0.82);
       backdrop-filter: blur(16px) saturate(180%);
       -webkit-backdrop-filter: blur(16px) saturate(180%);
       border-bottom: 1px solid rgba(15, 23, 42, 0.05);
@@ -69,7 +66,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: #0284c7;
+      background: #0f172a;
       transition: width 0.25s ease;
     }
     .nav-link:hover { color: #0f172a; }
@@ -107,8 +104,8 @@
     }
     .service-card:hover {
       transform: translateY(-4px);
-      border-color: #0284c7;
-      box-shadow: 0 20px 30px -16px rgba(2, 132, 199, 0.10);
+      border-color: #0f172a;
+      box-shadow: 0 20px 30px -16px rgba(15, 23, 42, 0.08);
     }
 
     .doctor-card {
@@ -117,7 +114,7 @@
       transition: all 0.25s ease;
     }
     .doctor-card:hover {
-      border-color: #b9d4e8;
+      border-color: #94a3b8;
       box-shadow: 0 12px 28px -16px rgba(15, 23, 42, 0.08);
     }
 
@@ -127,8 +124,8 @@
       background: #ffffff;
     }
     .input-field:focus {
-      border-color: #0284c7;
-      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.10);
+      border-color: #0f172a;
+      box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08);
       outline: none;
     }
 
@@ -137,30 +134,43 @@
     }
     .footer-link:hover { color: #94a3b8; }
 
-    /* mobile menu max-height transition */
-    .mobile-menu-inner {
-      transition: max-height 0.3s cubic-bezier(0.2, 0, 0, 1);
+    .doctor-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 9999px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      color: #475569;
+      margin: 0 auto 1rem;
+      border: 2px solid #e2e8f0;
+      flex-shrink: 0;
     }
 
     @media (max-width: 640px) {
       .hero-headline { font-size: 2.25rem; line-height: 1.2; }
     }
+
+    .clinic-location-badge {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+    }
   </style>
 </head>
 <body>
 
-  <!-- HEADER (sticky glass) -->
+  <!-- HEADER -->
   <header class="glass-header fixed top-0 left-0 w-full z-50 h-16 md:h-20 flex items-center">
     <div class="max-w-7xl w-full mx-auto px-5 md:px-8 flex items-center justify-between">
-      <!-- logo -->
       <div class="flex items-center gap-2">
         <span class="text-xl md:text-2xl font-bold tracking-tight text-[#0f172a]">
-          Court Street<span class="text-[#0284c7]"> Dental</span>
+          Court Street<span class="text-[#0f172a]"> Dental</span>
         </span>
-        <span class="hidden md:inline-block text-[10px] font-medium uppercase tracking-widest text-slate-400 bg-slate-100/80 px-2 py-0.5 rounded-full">Beni Suef</span>
+        <span class="hidden md:inline-block text-[10px] font-medium uppercase tracking-widest text-slate-500 bg-slate-100/80 px-2 py-0.5 rounded-full">Wexford</span>
       </div>
 
-      <!-- desktop nav -->
       <nav class="hidden md:flex items-center gap-8 text-sm">
         <a href="#home" class="nav-link">Home</a>
         <a href="#about" class="nav-link">About</a>
@@ -169,11 +179,10 @@
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
-      <!-- right: phone + toggle -->
       <div class="flex items-center gap-3">
-        <a href="tel:+201234567890" class="hidden sm:flex items-center gap-1.5 text-sm font-semibold text-[#0f172a] bg-slate-100/70 px-4 py-2 rounded-full hover:bg-slate-200/70 transition">
+        <a href="tel:+353539123456" class="hidden sm:flex items-center gap-1.5 text-sm font-semibold text-[#0f172a] bg-slate-100/70 px-4 py-2 rounded-full hover:bg-slate-200/70 transition">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>+20 123 456 7890</span>
+          <span>+353 53 912 3456</span>
         </a>
         <button id="menu-toggle" class="md:hidden p-2 rounded-md text-slate-700 hover:bg-slate-100 transition" aria-label="menu">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -181,7 +190,6 @@
       </div>
     </div>
 
-    <!-- mobile drawer (hidden) -->
     <div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-sm border-b border-slate-100 overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
       <div class="flex flex-col gap-1 px-5 py-4">
         <a href="#home" class="nav-link py-2.5 px-3 rounded-lg hover:bg-slate-50">Home</a>
@@ -189,47 +197,46 @@
         <a href="#services" class="nav-link py-2.5 px-3 rounded-lg hover:bg-slate-50">Services</a>
         <a href="#doctors" class="nav-link py-2.5 px-3 rounded-lg hover:bg-slate-50">Doctors</a>
         <a href="#contact" class="nav-link py-2.5 px-3 rounded-lg hover:bg-slate-50">Contact</a>
-        <a href="tel:+201234567890" class="mt-2 btn-primary text-center rounded-full py-2.5 text-sm font-semibold">Call Us Now</a>
+        <a href="tel:+353539123456" class="mt-2 btn-primary text-center rounded-full py-2.5 text-sm font-semibold">Call Now</a>
       </div>
     </div>
   </header>
 
   <main class="pt-16 md:pt-20">
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <section id="home" class="relative bg-[#f8fafc] border-b border-slate-100/60">
       <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24 lg:py-32">
         <div class="grid md:grid-cols-12 gap-12 items-center">
           <div class="md:col-span-7 space-y-6">
-            <div class="inline-block bg-[#0284c7]/10 text-[#0f172a] text-sm font-medium px-4 py-1.5 rounded-full tracking-wide border border-[#0284c7]/10">
-              ⚕️ Precision dentistry in Beni Suef
+            <div class="inline-block bg-[#0f172a]/5 text-[#0f172a] text-sm font-medium px-4 py-1.5 rounded-full tracking-wide border border-[#0f172a]/10">
+              Precision dentistry in Wexford &amp; Enniscorthy
             </div>
             <h1 class="hero-headline text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-[#0f172a]">
               Exceptional care,<br />
-              <span class="text-[#0284c7]">European standard</span>
+              <span class="text-[#0f172a]">European standard</span>
             </h1>
             <p class="text-lg md:text-xl text-slate-600 max-w-lg leading-relaxed">
               Court Street Dental combines advanced diagnostics, meticulous hygiene, 
-              and patient-first philosophy — delivering high-end dentistry in the heart of Beni Suef.
+              and patient-first philosophy — delivering high-end dentistry across Wexford and Enniscorthy.
             </p>
             <div class="flex flex-wrap items-center gap-4 pt-2">
               <a href="#contact" class="btn-primary px-8 py-3.5 rounded-full text-base font-semibold">Contact clinic</a>
               <a href="#services" class="btn-outline px-7 py-3 rounded-full text-base font-medium">Our services</a>
             </div>
-            <!-- value props -->
             <div class="flex flex-wrap gap-6 pt-4 text-sm text-slate-600">
-              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#0284c7]"></span> Modern diagnostics</div>
-              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#0284c7]"></span> Patient-centric care</div>
-              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#0284c7]"></span> Sterile environment</div>
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#0f172a]"></span> Modern diagnostics</div>
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#0f172a]"></span> Patient-centric care</div>
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#0f172a]"></span> Sterile environment</div>
             </div>
           </div>
           <div class="md:col-span-5 flex justify-center">
-            <div class="relative w-full max-w-sm aspect-square rounded-2xl bg-gradient-to-br from-[#0f172a]/[0.03] to-[#0284c7]/[0.05] border border-slate-200/60 shadow-sm flex items-center justify-center p-6">
+            <div class="relative w-full max-w-sm aspect-square rounded-2xl bg-gradient-to-br from-[#0f172a]/[0.03] to-[#0f172a]/[0.02] border border-slate-200/60 shadow-sm flex items-center justify-center p-6">
               <div class="text-center">
                 <span class="text-7xl block mb-2">🦷</span>
-                <p class="text-xs font-medium text-slate-400 tracking-widest uppercase">Since 2014</p>
+                <p class="text-xs font-medium text-slate-400 tracking-widest uppercase">Est. 2014</p>
                 <h3 class="text-2xl font-bold text-[#0f172a]">Court Street</h3>
-                <p class="text-sm text-slate-500">Beni Suef · Egypt</p>
+                <p class="text-sm text-slate-500">Wexford · Ireland</p>
               </div>
             </div>
           </div>
@@ -242,11 +249,11 @@
       <div class="max-w-7xl mx-auto px-5 md:px-8">
         <div class="grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <span class="text-[#0284c7] font-semibold tracking-widest text-sm uppercase">About</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mt-2 leading-tight">Where precision <br />meets <span class="text-[#0284c7]">patient comfort</span></h2>
+            <span class="text-[#0f172a] font-semibold tracking-widest text-sm uppercase border-b-2 border-[#0f172a]/20 pb-1">About</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mt-4 leading-tight">Where precision <br />meets <span class="text-[#0f172a]">patient comfort</span></h2>
             <p class="text-slate-600 mt-5 leading-relaxed">
               Court Street Dental was founded with a clear mission: to bring world-class 
-              dental care to Beni Suef. Our clinic is equipped with cutting-edge technology, 
+              dental care to Wexford and Enniscorthy. Our clinic is equipped with cutting-edge technology, 
               strict sterilization protocols, and a team of specialists who treat every 
               patient with empathy and precision.
             </p>
@@ -260,17 +267,21 @@
                 <span class="text-slate-500 text-sm block">Years combined expertise</span>
               </div>
               <div class="bg-slate-50/80 p-4 rounded-xl border border-slate-100">
-                <span class="font-bold text-[#0f172a] text-lg">🔬</span>
-                <span class="text-slate-500 text-sm block">Digital radiography</span>
+                <span class="font-bold text-[#0f172a] text-lg">Digital</span>
+                <span class="text-slate-500 text-sm block">Radiography &amp; 3D imaging</span>
               </div>
               <div class="bg-slate-50/80 p-4 rounded-xl border border-slate-100">
-                <span class="font-bold text-[#0f172a] text-lg">🌿</span>
-                <span class="text-slate-500 text-sm block">Eco-friendly practice</span>
+                <span class="font-bold text-[#0f172a] text-lg">Eco</span>
+                <span class="text-slate-500 text-sm block">Sustainable practice</span>
               </div>
             </div>
           </div>
-          <div class="bg-[#f1f5f9] rounded-2xl overflow-hidden border border-slate-200/60 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop&crop=center" alt="Court Street Dental clinic interior" class="w-full h-auto object-cover" loading="lazy" />
+          <div class="bg-[#f1f5f9] rounded-2xl border border-slate-200/60 shadow-sm p-12 flex items-center justify-center">
+            <div class="text-center">
+              <span class="text-7xl block mb-4">🏥</span>
+              <p class="text-slate-500 text-sm">Modern clinic · Wexford town centre</p>
+              <p class="text-slate-400 text-xs mt-1">Also serving Enniscorthy</p>
+            </div>
           </div>
         </div>
       </div>
@@ -280,9 +291,9 @@
     <section id="services" class="py-20 bg-[#f8fafc]">
       <div class="max-w-7xl mx-auto px-5 md:px-8">
         <div class="text-center max-w-2xl mx-auto">
-          <span class="text-[#0284c7] font-semibold tracking-widest text-sm uppercase">Treatments</span>
-          <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mt-2">Comprehensive dental services</h2>
-          <p class="text-slate-500 mt-3">Advanced, evidence-based treatments delivered with care.</p>
+          <span class="text-[#0f172a] font-semibold tracking-widest text-sm uppercase border-b-2 border-[#0f172a]/20 pb-1">Treatments</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mt-4">Comprehensive dental services</h2>
+          <p class="text-slate-500 mt-3">Advanced, evidence-based treatments delivered with care across Wexford and Enniscorthy.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           <article class="service-card p-6 rounded-xl">
@@ -323,17 +334,16 @@
     <section id="doctors" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-5 md:px-8">
         <div class="text-center max-w-2xl mx-auto">
-          <span class="text-[#0284c7] font-semibold tracking-widest text-sm uppercase">Specialists</span>
-          <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mt-2">Experts in advanced dentistry</h2>
-          <p class="text-slate-500 mt-3">Each clinician brings years of specialised experience.</p>
+          <span class="text-[#0f172a] font-semibold tracking-widest text-sm uppercase border-b-2 border-[#0f172a]/20 pb-1">Specialists</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mt-4">Experts in advanced dentistry</h2>
+          <p class="text-slate-500 mt-3">Each clinician brings years of specialised experience to Wexford and Enniscorthy.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          <!-- doctor 1 -->
           <article class="doctor-card rounded-2xl p-6">
             <div class="flex flex-col items-center text-center">
-              <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face" alt="Dr. Ahmed El-Masry" class="w-28 h-28 rounded-full object-cover border-2 border-[#0284c7]/20 mb-4" loading="lazy" />
-              <h3 class="text-xl font-bold text-[#0f172a]">Dr. Ahmed El-Masry</h3>
-              <p class="text-sm text-[#0284c7] font-medium">BDS, MSc (Restorative)</p>
+              <div class="doctor-avatar">👨‍⚕️</div>
+              <h3 class="text-xl font-bold text-[#0f172a]">Dr. James O'Brien</h3>
+              <p class="text-sm text-[#0f172a] font-medium">BDS, MSc (Restorative)</p>
               <p class="text-slate-500 text-sm mt-1 leading-relaxed">Specialist in cosmetic &amp; implant dentistry with 12+ years of experience.</p>
               <div class="flex flex-wrap justify-center gap-1 mt-3 text-xs text-slate-500">
                 <span class="bg-slate-100 px-3 py-1 rounded-full">Surgical Implantology</span>
@@ -341,12 +351,11 @@
               </div>
             </div>
           </article>
-          <!-- doctor 2 -->
           <article class="doctor-card rounded-2xl p-6">
             <div class="flex flex-col items-center text-center">
-              <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop&crop=face" alt="Dr. Nour Khaled" class="w-28 h-28 rounded-full object-cover border-2 border-[#0284c7]/20 mb-4" loading="lazy" />
-              <h3 class="text-xl font-bold text-[#0f172a]">Dr. Nour Khaled</h3>
-              <p class="text-sm text-[#0284c7] font-medium">BDS, MSc (Ortho)</p>
+              <div class="doctor-avatar">👩‍⚕️</div>
+              <h3 class="text-xl font-bold text-[#0f172a]">Dr. Sarah Kelly</h3>
+              <p class="text-sm text-[#0f172a] font-medium">BDS, MSc (Ortho)</p>
               <p class="text-slate-500 text-sm mt-1 leading-relaxed">Orthodontics &amp; pediatric care specialist, Invisalign certified.</p>
               <div class="flex flex-wrap justify-center gap-1 mt-3 text-xs text-slate-500">
                 <span class="bg-slate-100 px-3 py-1 rounded-full">Invisalign</span>
@@ -354,12 +363,11 @@
               </div>
             </div>
           </article>
-          <!-- doctor 3 -->
           <article class="doctor-card rounded-2xl p-6">
             <div class="flex flex-col items-center text-center">
-              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop&crop=face" alt="Dr. Karim Hassan" class="w-28 h-28 rounded-full object-cover border-2 border-[#0284c7]/20 mb-4" loading="lazy" />
-              <h3 class="text-xl font-bold text-[#0f172a]">Dr. Karim Hassan</h3>
-              <p class="text-sm text-[#0284c7] font-medium">BDS, PhD (Endo)</p>
+              <div class="doctor-avatar">👨‍⚕️</div>
+              <h3 class="text-xl font-bold text-[#0f172a]">Dr. Michael Ryan</h3>
+              <p class="text-sm text-[#0f172a] font-medium">BDS, PhD (Endo)</p>
               <p class="text-slate-500 text-sm mt-1 leading-relaxed">Endodontist with 15+ years in micro-surgical root canal therapy.</p>
               <div class="flex flex-wrap justify-center gap-1 mt-3 text-xs text-slate-500">
                 <span class="bg-slate-100 px-3 py-1 rounded-full">Micro-Endodontics</span>
@@ -376,24 +384,28 @@
       <div class="max-w-7xl mx-auto px-5 md:px-8">
         <div class="grid lg:grid-cols-2 gap-14">
           <div>
-            <span class="text-[#0284c7] font-semibold tracking-widest text-sm uppercase">Visit us</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mt-2">Get in touch</h2>
+            <span class="text-[#0f172a] font-semibold tracking-widest text-sm uppercase border-b-2 border-[#0f172a]/20 pb-1">Visit us</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mt-4">Get in touch</h2>
             <div class="mt-6 space-y-5 text-slate-600">
-              <div><span class="font-medium text-[#0f172a] block">📍 Address</span>Court Street, Beni Suef, Egypt</div>
-              <div><span class="font-medium text-[#0f172a] block">📞 Phone</span><a href="tel:+201234567890" class="hover:text-[#0284c7]">+20 123 456 7890</a></div>
-              <div><span class="font-medium text-[#0f172a] block">✉️ Email</span><a href="mailto:info@courtstreetdental.com" class="hover:text-[#0284c7]">info@courtstreetdental.com</a></div>
-              <div><span class="font-medium text-[#0f172a] block">🕒 Opening hours</span>
+              <div><span class="font-medium text-[#0f172a] block">Address</span>Court Street, Wexford, Ireland</div>
+              <div><span class="font-medium text-[#0f172a] block">Phone</span><a href="tel:+353539123456" class="hover:text-[#0f172a]">+353 53 912 3456</a></div>
+              <div><span class="font-medium text-[#0f172a] block">Email</span><a href="mailto:info@courtstreetdental.ie" class="hover:text-[#0f172a]">info@courtstreetdental.ie</a></div>
+              <div><span class="font-medium text-[#0f172a] block">Opening hours</span>
                 <ul class="text-sm space-y-0.5">
-                  <li>Sat – Thu: 9:00 AM – 9:00 PM</li>
-                  <li>Fri: closed</li>
+                  <li>Mon – Fri: 8:00 AM – 8:00 PM</li>
+                  <li>Sat: 9:00 AM – 5:00 PM</li>
+                  <li>Sun: closed</li>
                 </ul>
+              </div>
+              <div class="mt-4 p-4 bg-white rounded-xl border border-slate-200">
+                <p class="text-sm font-medium text-[#0f172a]">Also serving Enniscorthy</p>
+                <p class="text-xs text-slate-500">Satellite consultations available by appointment</p>
               </div>
             </div>
           </div>
-          <!-- form -->
           <div class="bg-white p-8 rounded-2xl border border-slate-200/70 shadow-sm">
             <h3 class="text-2xl font-semibold text-[#0f172a]">Send a message</h3>
-            <p class="text-sm text-slate-500 mb-5">We’ll respond within 24 hours.</p>
+            <p class="text-sm text-slate-500 mb-5">We'll respond within 24 hours.</p>
             <form action="#" method="POST" class="space-y-4">
               <div>
                 <label class="block text-sm font-medium text-slate-700">Full name</label>
@@ -401,7 +413,7 @@
               </div>
               <div>
                 <label class="block text-sm font-medium text-slate-700">Phone number</label>
-                <input type="tel" placeholder="+20 123 456 7890" class="input-field w-full mt-1 px-4 py-3 rounded-xl bg-white text-slate-800 placeholder:text-slate-400" />
+                <input type="tel" placeholder="+353 53 912 3456" class="input-field w-full mt-1 px-4 py-3 rounded-xl bg-white text-slate-800 placeholder:text-slate-400" />
               </div>
               <div>
                 <label class="block text-sm font-medium text-slate-700">Message</label>
@@ -420,8 +432,9 @@
     <div class="max-w-7xl mx-auto px-5 md:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-6">
         <div>
-          <span class="text-2xl font-bold text-white">Court Street<span class="text-[#0284c7]"> Dental</span></span>
-          <p class="text-sm text-slate-400 mt-0.5">Beni Suef · Egypt</p>
+          <span class="text-2xl font-bold text-white">Court Street Dental</span>
+          <p class="text-sm text-slate-400 mt-0.5">Wexford · Ireland</p>
+          <p class="text-xs text-slate-500">Serving Enniscorthy and surrounding areas</p>
         </div>
         <div class="flex flex-wrap justify-center gap-6 text-sm">
           <a href="#home" class="footer-link">Home</a>
@@ -430,7 +443,7 @@
           <a href="#doctors" class="footer-link">Doctors</a>
           <a href="#contact" class="footer-link">Contact</a>
         </div>
-        <div class="text-sm text-slate-400">📞 +20 123 456 7890</div>
+        <div class="text-sm text-slate-400">📞 +353 53 912 3456</div>
       </div>
       <div class="border-t border-slate-700/50 mt-8 pt-6 text-center text-xs text-slate-500">
         &copy; 2026 Court Street Dental · All rights reserved.
@@ -438,7 +451,6 @@
     </div>
   </footer>
 
-  <!-- MOBILE MENU + SMOOTH SCROLL (vanilla) -->
   <script>
     (function() {
       const toggle = document.getElementById('menu-toggle');
@@ -452,14 +464,12 @@
         });
       }
 
-      // close mobile on link click
       document.querySelectorAll('#mobile-menu a').forEach(link => {
         link.addEventListener('click', function() {
           if (menu) menu.style.maxHeight = '0px';
         });
       });
 
-      // smooth scroll for all internal anchors
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           const targetId = this.getAttribute('href');
