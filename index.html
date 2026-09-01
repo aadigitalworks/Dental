@@ -119,17 +119,6 @@
       box-shadow: 0 16px 36px -16px rgba(30, 58, 138, 0.08);
     }
 
-    .input-field {
-      border: 1px solid #e2e8f0;
-      transition: border 0.15s, box-shadow 0.15s;
-      background: #ffffff;
-    }
-    .input-field:focus {
-      border-color: #1e3a8a;
-      box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.06);
-      outline: none;
-    }
-
     .footer-link {
       transition: color 0.15s;
       font-weight: 400;
@@ -189,14 +178,29 @@
     }
     .modal-close:hover { background: #e2e8f0; }
 
-    /* Boyne Dental style - clean, spacious, premium */
-    .section-title {
-      letter-spacing: 0.05em;
-      font-weight: 500;
+    /* Contact cards style inspired by OW Electrical */
+    .contact-card {
+      background: #ffffff;
+      border: 1px solid #f1f5f9;
+      transition: all 0.25s ease;
     }
-    .section-subtitle {
-      font-weight: 300;
-      color: #64748b;
+    .contact-card:hover {
+      transform: translateY(-3px);
+      border-color: #1e3a8a;
+      box-shadow: 0 12px 30px -12px rgba(30, 58, 138, 0.08);
+    }
+
+    .section-badge {
+      background: rgba(30, 58, 138, 0.06);
+      color: #1e3a8a;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 1rem;
+      border-radius: 9999px;
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      border: 1px solid rgba(30, 58, 138, 0.08);
     }
   </style>
 </head>
@@ -418,36 +422,51 @@
       </div>
     </section>
 
-    <!-- CONTACT: Boyne Dental style - clean, no form, just contact info -->
+    <!-- CONTACT: OW Electrical style - clean cards with phone and email -->
     <section id="contact" class="py-20 md:py-28 bg-[#f8fafc]">
       <div class="max-w-7xl mx-auto px-6 md:px-10">
-        <div class="text-center max-w-3xl mx-auto">
-          <span class="text-[#1e3a8a] font-medium tracking-widest text-sm uppercase border-b-2 border-[#1e3a8a]/20 pb-1">Contact</span>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="section-badge">Contact</span>
           <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mt-4">Get in touch with us</h2>
-          <p class="text-slate-500 mt-3">We're here to help you achieve your best smile. Reach out by phone, email, or visit our clinic.</p>
+          <p class="text-slate-500 mt-3">Reach out by phone or email — we're here to help you achieve your best smile.</p>
         </div>
-        <div class="grid md:grid-cols-3 gap-8 mt-12 max-w-4xl mx-auto">
-          <div class="bg-white p-8 rounded-2xl border border-slate-200/70 shadow-sm text-center">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <h3 class="text-lg font-bold text-[#0f172a]">Phone</h3>
-            <a href="tel:+353539123456" class="text-[#1e3a8a] hover:underline">+353 53 912 3456</a>
-          </div>
-          <div class="bg-white p-8 rounded-2xl border border-slate-200/70 shadow-sm text-center">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <h3 class="text-lg font-bold text-[#0f172a]">Email</h3>
-            <a href="mailto:info@courtstreetdental.ie" class="text-[#1e3a8a] hover:underline">info@courtstreetdental.ie</a>
-          </div>
-          <div class="bg-white p-8 rounded-2xl border border-slate-200/70 shadow-sm text-center">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <h3 class="text-lg font-bold text-[#0f172a]">Address</h3>
-            <p class="text-slate-500">Court Street, Wexford, Ireland</p>
-          </div>
+        
+        <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <!-- Phone Card - like OW Electrical call/WhatsApp -->
+          <a href="tel:+353539123456" class="contact-card p-8 rounded-2xl text-center group transition-all block">
+            <div class="w-16 h-16 bg-[#1e3a8a]/5 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#1e3a8a]/10 transition">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#0f172a]">Call Us</h3>
+            <p class="text-[#1e3a8a] font-medium text-lg mt-1">+353 53 912 3456</p>
+            <p class="text-slate-400 text-sm mt-2">Mon–Sat, 8am – 8pm</p>
+          </a>
+          
+          <!-- Email Card - replaces WhatsApp with email -->
+          <a href="mailto:info@courtstreetdental.ie" class="contact-card p-8 rounded-2xl text-center group transition-all block">
+            <div class="w-16 h-16 bg-[#1e3a8a]/5 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#1e3a8a]/10 transition">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#0f172a]">Email Us</h3>
+            <p class="text-[#1e3a8a] font-medium text-lg mt-1">info@courtstreetdental.ie</p>
+            <p class="text-slate-400 text-sm mt-2">We respond within 24 hours</p>
+          </a>
         </div>
-        <div class="mt-8 text-center max-w-2xl mx-auto bg-white p-6 rounded-2xl border border-slate-200/70 shadow-sm">
-          <h4 class="font-semibold text-[#0f172a]">Opening Hours</h4>
-          <p class="text-slate-500 text-sm">Mon – Fri: 8:00 AM – 8:00 PM</p>
-          <p class="text-slate-500 text-sm">Sat: 9:00 AM – 5:00 PM</p>
-          <p class="text-slate-500 text-sm">Sun: closed</p>
+
+        <!-- Opening Hours and Address - clean card style -->
+        <div class="mt-10 max-w-3xl mx-auto grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-2xl border border-slate-200/70 shadow-sm text-center">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <h4 class="font-semibold text-[#0f172a]">Opening Hours</h4>
+            <p class="text-slate-500 text-sm">Mon – Fri: 8:00 AM – 8:00 PM</p>
+            <p class="text-slate-500 text-sm">Sat: 9:00 AM – 5:00 PM</p>
+            <p class="text-slate-500 text-sm">Sun: closed</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl border border-slate-200/70 shadow-sm text-center">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <h4 class="font-semibold text-[#0f172a]">Visit Our Clinic</h4>
+            <p class="text-slate-500 text-sm">Court Street, Wexford, Ireland</p>
+          </div>
         </div>
       </div>
     </section>
