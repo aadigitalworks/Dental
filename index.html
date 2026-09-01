@@ -43,11 +43,11 @@
     * { font-family: 'Inter', system-ui, -apple-system, sans-serif; scroll-behavior: smooth; }
     body { background: #f8fafc; }
     
-    /* Refined header - more premium */
+    /* Premium header - Boyne Dental style */
     .glass-header {
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(16px) saturate(180%);
-      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px) saturate(180%);
+      -webkit-backdrop-filter: blur(12px) saturate(180%);
       border-bottom: 1px solid rgba(15, 23, 42, 0.04);
       box-shadow: 0 1px 16px -8px rgba(15, 23, 42, 0.04);
     }
@@ -188,6 +188,16 @@
       color: #475569;
     }
     .modal-close:hover { background: #e2e8f0; }
+
+    /* Boyne Dental style - clean, spacious, premium */
+    .section-title {
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+    .section-subtitle {
+      font-weight: 300;
+      color: #64748b;
+    }
   </style>
 </head>
 <body>
@@ -211,9 +221,13 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="tel:+353539123456" class="hidden sm:flex items-center gap-1.5 text-sm font-medium text-[#1e3a8a] bg-slate-100/70 px-4 py-2 rounded-full hover:bg-slate-200/70 transition">
+        <a href="tel:+353539123456" class="flex items-center gap-1.5 text-sm font-medium text-[#1e3a8a] bg-slate-100/70 px-4 py-2 rounded-full hover:bg-slate-200/70 transition">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span>+353 53 912 3456</span>
+        </a>
+        <a href="mailto:info@courtstreetdental.ie" class="hidden md:flex items-center gap-1.5 text-sm font-medium text-[#1e3a8a] bg-slate-100/70 px-4 py-2 rounded-full hover:bg-slate-200/70 transition">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>Email</span>
         </a>
         <button id="menu-toggle" class="md:hidden p-2 rounded-md text-slate-700 hover:bg-slate-100 transition" aria-label="menu">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -229,13 +243,14 @@
         <a href="#team" class="nav-link py-2.5 px-3 rounded-lg hover:bg-slate-50">Team</a>
         <a href="#contact" class="nav-link py-2.5 px-3 rounded-lg hover:bg-slate-50">Contact</a>
         <a href="tel:+353539123456" class="mt-2 btn-primary text-center rounded-full py-2.5 text-sm font-medium">Call Now</a>
+        <a href="mailto:info@courtstreetdental.ie" class="mt-1 text-center text-sm font-medium text-[#1e3a8a] py-2">Email Us</a>
       </div>
     </div>
   </header>
 
   <main class="pt-16 md:pt-20">
 
-    <!-- HERO: refined with premium background -->
+    <!-- HERO: Boyne Dental style - clean, spacious, premium -->
     <section id="home" class="relative bg-[#f8fafc] border-b border-slate-100/60 overflow-hidden">
       <div class="absolute inset-0 opacity-[0.03] bg-[url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1600&q=80')] bg-cover bg-center"></div>
       <div class="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28 lg:py-36 relative">
@@ -253,7 +268,7 @@
               and patient-first philosophy — delivering high-end dentistry in the heart of Wexford.
             </p>
             <div class="flex flex-wrap items-center gap-4 pt-2">
-              <a href="#contact" class="btn-primary px-8 py-3.5 rounded-full text-base font-medium">Contact us</a>
+              <a href="tel:+353539123456" class="btn-primary px-8 py-3.5 rounded-full text-base font-medium">Call Us Now</a>
               <a href="#treatments" class="btn-outline px-7 py-3 rounded-full text-base font-medium">Our treatments</a>
             </div>
             <div class="flex flex-wrap gap-8 pt-4 text-sm text-slate-500">
@@ -277,7 +292,7 @@
       </div>
     </section>
 
-    <!-- ABOUT: refined with medical imagery -->
+    <!-- ABOUT: Boyne Dental style -->
     <section id="about" class="bg-white py-20 md:py-28">
       <div class="max-w-7xl mx-auto px-6 md:px-10">
         <div class="grid md:grid-cols-2 gap-16 items-center">
@@ -360,16 +375,15 @@
       </div>
     </section>
 
-    <!-- TEAM: interactive doctor cards with modal -->
+    <!-- TEAM -->
     <section id="team" class="py-20 md:py-28 bg-white">
       <div class="max-w-7xl mx-auto px-6 md:px-10">
         <div class="text-center max-w-2xl mx-auto">
           <span class="text-[#1e3a8a] font-medium tracking-widest text-sm uppercase border-b-2 border-[#1e3a8a]/20 pb-1">Team</span>
           <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mt-4">Specialists in advanced dentistry</h2>
-          <p class="text-slate-500 mt-3">Each clinician brings years of specialised experience. Click a profile for more details.</p>
+          <p class="text-slate-500 mt-3">Each clinician brings years of specialised experience.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          <!-- Doctor 1 -->
           <div class="doctor-card rounded-2xl p-8 text-center" data-doctor="0">
             <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face" alt="Dr. James O'Brien" class="w-28 h-28 rounded-full object-cover border-2 border-[#1e3a8a]/10 mx-auto mb-4" loading="lazy" />
             <h3 class="text-xl font-bold text-[#0f172a]">Dr. James O'Brien</h3>
@@ -380,7 +394,6 @@
               <span class="bg-slate-100 px-3 py-1 rounded-full">Smile Design</span>
             </div>
           </div>
-          <!-- Doctor 2 -->
           <div class="doctor-card rounded-2xl p-8 text-center" data-doctor="1">
             <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop&crop=face" alt="Dr. Sarah Kelly" class="w-28 h-28 rounded-full object-cover border-2 border-[#1e3a8a]/10 mx-auto mb-4" loading="lazy" />
             <h3 class="text-xl font-bold text-[#0f172a]">Dr. Sarah Kelly</h3>
@@ -391,7 +404,6 @@
               <span class="bg-slate-100 px-3 py-1 rounded-full">Growth Guidance</span>
             </div>
           </div>
-          <!-- Doctor 3 -->
           <div class="doctor-card rounded-2xl p-8 text-center" data-doctor="2">
             <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop&crop=face" alt="Dr. Michael Ryan" class="w-28 h-28 rounded-full object-cover border-2 border-[#1e3a8a]/10 mx-auto mb-4" loading="lazy" />
             <h3 class="text-xl font-bold text-[#0f172a]">Dr. Michael Ryan</h3>
@@ -406,45 +418,36 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT: Boyne Dental style - clean, no form, just contact info -->
     <section id="contact" class="py-20 md:py-28 bg-[#f8fafc]">
       <div class="max-w-7xl mx-auto px-6 md:px-10">
-        <div class="grid lg:grid-cols-2 gap-14">
-          <div>
-            <span class="text-[#1e3a8a] font-medium tracking-widest text-sm uppercase border-b-2 border-[#1e3a8a]/20 pb-1">Contact</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mt-4">Get in touch</h2>
-            <div class="mt-6 space-y-5 text-slate-500">
-              <div><span class="font-medium text-[#0f172a] block">Address</span>Court Street, Wexford, Ireland</div>
-              <div><span class="font-medium text-[#0f172a] block">Phone</span><a href="tel:+353539123456" class="hover:text-[#1e3a8a]">+353 53 912 3456</a></div>
-              <div><span class="font-medium text-[#0f172a] block">Email</span><a href="mailto:info@courtstreetdental.ie" class="hover:text-[#1e3a8a]">info@courtstreetdental.ie</a></div>
-              <div><span class="font-medium text-[#0f172a] block">Opening hours</span>
-                <ul class="text-sm space-y-0.5">
-                  <li>Mon – Fri: 8:00 AM – 8:00 PM</li>
-                  <li>Sat: 9:00 AM – 5:00 PM</li>
-                  <li>Sun: closed</li>
-                </ul>
-              </div>
-            </div>
+        <div class="text-center max-w-3xl mx-auto">
+          <span class="text-[#1e3a8a] font-medium tracking-widest text-sm uppercase border-b-2 border-[#1e3a8a]/20 pb-1">Contact</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mt-4">Get in touch with us</h2>
+          <p class="text-slate-500 mt-3">We're here to help you achieve your best smile. Reach out by phone, email, or visit our clinic.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 mt-12 max-w-4xl mx-auto">
+          <div class="bg-white p-8 rounded-2xl border border-slate-200/70 shadow-sm text-center">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <h3 class="text-lg font-bold text-[#0f172a]">Phone</h3>
+            <a href="tel:+353539123456" class="text-[#1e3a8a] hover:underline">+353 53 912 3456</a>
           </div>
-          <div class="bg-white p-8 rounded-2xl border border-slate-200/70 shadow-sm">
-            <h3 class="text-2xl font-semibold text-[#0f172a]">Send a message</h3>
-            <p class="text-sm text-slate-500 mb-5">We'll respond within 24 hours.</p>
-            <form action="#" method="POST" class="space-y-4">
-              <div>
-                <label class="block text-sm font-medium text-slate-700">Full name</label>
-                <input type="text" placeholder="Your name" class="input-field w-full mt-1 px-4 py-3 rounded-xl bg-white text-slate-800 placeholder:text-slate-400" />
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-slate-700">Phone number</label>
-                <input type="tel" placeholder="+353 53 912 3456" class="input-field w-full mt-1 px-4 py-3 rounded-xl bg-white text-slate-800 placeholder:text-slate-400" />
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-slate-700">Message</label>
-                <textarea rows="3" placeholder="How can we assist you?" class="input-field w-full mt-1 px-4 py-3 rounded-xl bg-white text-slate-800 placeholder:text-slate-400 resize-none"></textarea>
-              </div>
-              <button type="submit" class="w-full btn-primary py-3.5 rounded-xl font-medium text-base">Send enquiry</button>
-            </form>
+          <div class="bg-white p-8 rounded-2xl border border-slate-200/70 shadow-sm text-center">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <h3 class="text-lg font-bold text-[#0f172a]">Email</h3>
+            <a href="mailto:info@courtstreetdental.ie" class="text-[#1e3a8a] hover:underline">info@courtstreetdental.ie</a>
           </div>
+          <div class="bg-white p-8 rounded-2xl border border-slate-200/70 shadow-sm text-center">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <h3 class="text-lg font-bold text-[#0f172a]">Address</h3>
+            <p class="text-slate-500">Court Street, Wexford, Ireland</p>
+          </div>
+        </div>
+        <div class="mt-8 text-center max-w-2xl mx-auto bg-white p-6 rounded-2xl border border-slate-200/70 shadow-sm">
+          <h4 class="font-semibold text-[#0f172a]">Opening Hours</h4>
+          <p class="text-slate-500 text-sm">Mon – Fri: 8:00 AM – 8:00 PM</p>
+          <p class="text-slate-500 text-sm">Sat: 9:00 AM – 5:00 PM</p>
+          <p class="text-slate-500 text-sm">Sun: closed</p>
         </div>
       </div>
     </section>
@@ -477,9 +480,10 @@
           <a href="#team" class="footer-link">Team</a>
           <a href="#contact" class="footer-link">Contact</a>
         </div>
-        <div class="text-sm text-slate-400">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          +353 53 912 3456
+        <div class="flex items-center gap-4 text-sm text-slate-400">
+          <a href="tel:+353539123456" class="hover:text-white transition">+353 53 912 3456</a>
+          <span class="text-slate-600">|</span>
+          <a href="mailto:info@courtstreetdental.ie" class="hover:text-white transition">Email</a>
         </div>
       </div>
       <div class="border-t border-slate-700/50 mt-8 pt-6 text-center text-xs text-slate-500">
@@ -523,7 +527,7 @@
         });
       });
 
-      // Doctor data for modal - updated with Irish names
+      // Doctor data for modal
       const doctors = [
         {
           name: "Dr. James O'Brien",
@@ -556,7 +560,6 @@
       const modalBody = document.getElementById('modal-body');
       const closeBtn = document.getElementById('modal-close');
 
-      // Open modal with doctor data
       function openModal(index) {
         const doc = doctors[index];
         if (!doc) return;
@@ -580,13 +583,11 @@
         document.body.style.overflow = 'hidden';
       }
 
-      // Close modal
       function closeModal() {
         modal.classList.remove('active');
         document.body.style.overflow = '';
       }
 
-      // Event listeners for doctor cards
       document.querySelectorAll('.doctor-card').forEach(card => {
         card.addEventListener('click', function(e) {
           const index = this.dataset.doctor;
@@ -594,13 +595,11 @@
         });
       });
 
-      // Close on overlay click or close button
       modal.addEventListener('click', function(e) {
         if (e.target === this) closeModal();
       });
       closeBtn.addEventListener('click', closeModal);
 
-      // Close with Escape key
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
       });
